@@ -1,0 +1,24 @@
+#card-number, #cvv, #expiration-date {
+  border: 1px solid #333;
+  border-radius: 5px;
+}
+
+#card-number.braintree-hosted-fields-focused, #cvv.braintree-hosted-fields-focused, #expiration-date.braintree-hosted-fields-focused {
+  border-color: #777;
+}
+
+#card-number.braintree-hosted-fields-invalid, #cvv.braintree-hosted-fields-invalid, #expiration-date.braintree-hosted-fields-invalid {
+  border-color: tomato;
+}
+
+#card-number.braintree-hosted-fields-valid, #cvv.braintree-hosted-fields-valid, #expiration-date.braintree-hosted-fields-valid {
+  border-color: limegreen;
+}
+
+#number-container {
+	width: 604px;
+}
+
+#cvv, #expiration-date {
+	display: inline-block;
+}
