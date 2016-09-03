@@ -30,22 +30,21 @@ module.exports = function(app) {
   			res.status(500);
   			res.render('error', { error: err });
   		} else {
-  			console.log('WOOHOO!');
-  		}
-  	})
   	//using payment to pay for transaction
-  	BrainTree.gateway.transaction.sale({
-  		customerId: '65767298',
-  		amount: "10.00",
-  		options: {
-  			submitForSettlement: true
-  		}, 
-  	}, function(err, results) {
-  		if(err) {
-  			res.status(500);
-  			res.render('error', { error: err });
-  		} else {
-  			res.status(201).send(results);
+			BrainTree.gateway.transaction.sale({
+				paymentMethodToken: results.creditCard.token,
+				amount: "10.00",
+				options: {
+					submitForSettlement: true
+				}, 
+			}, function(err, results) {
+				if(err) {
+					res.status(500);
+					res.render('error', { error: err });
+				} else {
+					res.status(201).send(results);
+				}
+			})
   		}
   	})
   });
