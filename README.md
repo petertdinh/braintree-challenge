@@ -4,7 +4,7 @@ Cd into directory:
 ```
     > npm install webpack -g //if you don't have it
     > npm install
-    > webpack --watch
+    > webpack
     > npm start
 ```
 
